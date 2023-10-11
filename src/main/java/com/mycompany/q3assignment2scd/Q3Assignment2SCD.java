@@ -59,5 +59,27 @@ class Merger{
 }
 public class Q3Assignment2SCD {
 
-    
+    public static void main(String[] args) {
+        List<int[]> intervals= new ArrayList<>();
+        Merger m1=new Merger();
+
+        /******** intervals ************/
+        System.out.println("ENTER INTERVALS");
+        System.out.print("Enter the number of intervals you want to add : ");
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        for(int i=0;i<a;i++)
+        {
+            System.out.print("Enter the start time of the interval "+(i+1)+": ");
+            int StartTime=sc.nextInt();
+            System.out.print("Enter the end time of the interval "+(i+1)+": ");
+            int EndTime=sc.nextInt();
+            intervals.add(new int[]{StartTime,EndTime});
+        }
+        System.out.print("The actual intervals are: [");
+        m1.display(intervals); 
+        List<int[]> intervals1=m1.mergeIntervals(intervals);
+        System.out.print("The merged intervals are: [");
+        m1.display(intervals1);
+    }
 }
